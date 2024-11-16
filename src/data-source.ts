@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { User } from "./entity/User"; // Add other entities as needed
+import { UserEntity } from "./entity/user.entity"; // Add other entities as needed
 
 export const AppDataSource = new DataSource({
   type: "mysql",
@@ -11,7 +11,7 @@ export const AppDataSource = new DataSource({
   database: "social", // Specify the 'social' database
   synchronize: true,
   logging: true,
-  entities: [User],
+  entities: [UserEntity],
   subscribers: [],
   migrations: []
 });

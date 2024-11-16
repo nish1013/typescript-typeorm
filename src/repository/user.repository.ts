@@ -1,12 +1,12 @@
 import { AppDataSource } from "../data-source";
-import { User } from "../entity/User";
+import { UserEntity } from "../entity/user.entity";
 
 export class UserRepository {
   // Create and save a new user
-  async create(): Promise<User> {
-    const user = new User();
+  async create(): Promise<UserEntity> {
+    const user = new UserEntity();
 
-    const repo = AppDataSource.getRepository(User);
+    const repo = AppDataSource.getRepository(UserEntity);
     return repo.save(user);
   }
 }
