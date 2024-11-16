@@ -24,6 +24,8 @@ initializeApp();
 // Try CRUD
 async function play() {
   const userRepo = new UserRepository();
-  const created = await userRepo.create();
+  const created = await userRepo.create({
+    firstName: 'John'
+  });
   console.log(`User ${created.id} created.`);
 }
