@@ -1,8 +1,8 @@
 export interface NewUser {
-    firstName: string;
-    lastName?: string;
+  firstName: string;
+  lastName?: string;
 }
 
 export interface User extends NewUser {
-    id: number;
+  id: number;
 }

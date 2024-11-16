@@ -1,7 +1,7 @@
-import { AppDataSource } from "../data-source";
+import { AppDataSource } from '../data-source';
 import { NewUser, User } from '../domain/user';
 import { UserMapper } from '../domain/user/user.mapper';
-import { UserEntity } from "../entity/user.entity";
+import { UserEntity } from '../entity/user.entity';
 
 export class UserRepository {
   // Create and save a new user
