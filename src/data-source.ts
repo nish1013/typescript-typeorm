@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { UserEntity } from "./entity/user.entity"; // Add other entities as needed
+import { CustomNamingStrategy } from './utils/custom-naming-strategy';
 
 export const AppDataSource = new DataSource({
   type: "mysql",
@@ -13,5 +14,6 @@ export const AppDataSource = new DataSource({
   logging: true,
   entities: [UserEntity],
   subscribers: [],
-  migrations: []
+  migrations: [],
+  namingStrategy: new CustomNamingStrategy(), // Use custom naming strategy
 });
