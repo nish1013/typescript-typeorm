@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryColumn } from 'typeorm';
 @Entity()
 export class ProductEntity {
   @PrimaryColumn()
-  code: number;
+  code: string;
 
   @Column()
   name: string;
