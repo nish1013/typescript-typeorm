@@ -4,8 +4,8 @@ import { UserMapper } from '../domain/user/user.mapper';
 import { UserEntity } from '../entity/user.entity';
 
 export class UserRepository {
-  private readonly userRepo = AppDataSource.getRepository(UserEntity);
-  private readonly userMapper = new UserMapper();
+  private readonly repo = AppDataSource.getRepository(UserEntity);
+  private readonly mapper = new UserMapper();
 
   /**
    * Creates and saves a new user in the database.
@@ -14,15 +14,15 @@ export class UserRepository {
    */
   public async create(newUser: NewUser): Promise<User> {
     // Map the input data to an entity
-    const userEntity = this.userRepo.create({
+    const userEntity = this.repo.create({
       firstName: newUser.firstName,
       lastName: newUser.lastName
     });
 
     // Save the entity to the database
-    const savedEntity = await this.userRepo.save(userEntity);
+    const savedEntity = await this.repo.save(userEntity);
 
     // Map the saved entity to the domain model
-    return this.userMapper.from(savedEntity);
+    return this.mapper.from(savedEntity);
   }
 }
