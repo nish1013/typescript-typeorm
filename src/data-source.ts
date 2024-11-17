@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 import { UserEntity } from './entity/user.entity'; // Add other entities as needed
 import { CustomNamingStrategy } from './utils/custom-naming-strategy';
+import { ProductEntity } from './entity/product.entity';
 
 export const AppDataSource = new DataSource({
   type: 'mysql',
@@ -12,7 +13,7 @@ export const AppDataSource = new DataSource({
   database: 'social', // Specify the 'social' database
   synchronize: true,
   logging: true,
-  entities: [UserEntity],
+  entities: [UserEntity, ProductEntity],
   subscribers: [],
   migrations: [],
   namingStrategy: new CustomNamingStrategy() // Use custom naming strategy
