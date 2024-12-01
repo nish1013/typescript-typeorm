@@ -1,5 +1,5 @@
 import { AppDataSource } from '../data-source';
-import { Product } from '../domain/product';
+import { NewProduct, Product } from '../domain/product';
 import { ProductMapper } from '../domain/product/product.mapper';
 import { ProductEntity } from '../entity/product.entity';
 
@@ -12,7 +12,7 @@ export class ProductRepository {
    * @param product - The data for the new product.
    * @returns The created product as a domain object.
    */
-  public async create(product: Product): Promise<Product> {
+  public async create(product: NewProduct): Promise<Product> {
     // Map the input data to a ProductEntity
     const entity = this.repo.create({
       code: product.code,
