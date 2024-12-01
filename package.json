@@ -18,6 +18,7 @@
   "scripts": {
     "watch": "tsc -w",
     "start": "tsc && node dist/index.js",
-    "typeorm": "./node_modules/.bin/typeorm"
+    "typeorm": "./node_modules/.bin/typeorm",
+    "format": "prettier --write \"src/**/*.ts\""
   }
 }
