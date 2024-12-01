@@ -1,4 +1,9 @@
-import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn, Unique } from 'typeorm';
+import {
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  Unique
+} from 'typeorm';
 
 @Entity()
 @Unique(['code'])
